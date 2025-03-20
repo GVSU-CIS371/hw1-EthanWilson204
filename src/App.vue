@@ -18,14 +18,13 @@
       </li>
     </ul>
 
-    <BaseBeverage :color="currentBase.color" />
     <ul>
       <li>
         <template v-for="(base, index) in bases" :key="base.id">
           <label>
             <input
               type="radio"
-              name="base"
+              name="baseBeverage"
               :id="`r${base.id}`"
               :value="base"
               :checked="index === 0"
@@ -36,6 +35,7 @@
         </template>
       </li>
     </ul>
+    <BaseBeverage :color="currentBase.color" />
 
     <ul>
       <li>
