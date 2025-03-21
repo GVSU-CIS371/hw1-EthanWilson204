@@ -1,14 +1,10 @@
 <template>
-  <div class="baseBeverage" :style="{ backgroundColor: color }"></div>
+  <div class="baseBeverage" :style="{ backgroundColor: currentBase.color }"></div>
 </template>
 
 <script setup lang="ts">
-defineProps({
-  color: {
-    type: String,
-    default: ''
-  }
-});
+import { currentBase } from "../stores/beverage";
+
 </script>
 
 <style scoped>

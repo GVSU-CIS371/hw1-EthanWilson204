@@ -20,14 +20,13 @@
 
     <ul>
       <li>
-        <template v-for="(base, index) in bases" :key="base.id">
+        <template v-for="base in bases" :key="base.id">
           <label>
             <input
               type="radio"
               name="baseBeverage"
               :id="`r${base.id}`"
               :value="base"
-              :checked="index === 0"
               v-model="currentBase"
             />
             {{ base.name }}
@@ -35,7 +34,7 @@
         </template>
       </li>
     </ul>
-    <BaseBeverage :color="currentBase.color" />
+    <!-- <BaseBeverage :color="currentBase.color" /> -->
 
     <ul>
       <li>
@@ -77,14 +76,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import Beverage from "./components/Beverage.vue";
 import { currentTemp, currentBase, currentCream, currentSyrup } from "./stores/beverage";
 import { temps, bases, creamers, syrups } from "./stores/beverage";
-import Base from "./components/Base.vue"
-import Creamer from "./components/Creamer.vue"
-import Syrup from "./components/Syrup.vue"
-
 </script>
 
 <style lang="scss">
